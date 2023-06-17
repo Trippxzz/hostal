@@ -1,6 +1,6 @@
 import pymysql
 from main import Usuario
-cone = pymysql.connect( host='localhost', user= 'root', passwd='admin', db='neoguias' )
+cone = pymysql.connect( host='localhost', user= 'root', passwd='', db='Hostal' )
 cur = cone.cursor()
 
 
@@ -15,4 +15,4 @@ class Operaciones:
         cur.close()
         cone.close()
         return lista
-    # 
+    
