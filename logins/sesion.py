@@ -7,43 +7,47 @@ con = Operaciones
 listausuarios = []
 
 
-# INICIO DE SESION USUARIO
+# INICIO DE SESION
 
 def iniciar_sesion():
     intentos = 0
     listausuarios = con.getInfoUsuario()
-
+    bconsola()
+    print("=============== Inicia Sesión ================")
     while intentos < 3:
         mail = input("Ingrese su correo: ")
-        encontrado = False  # Bandera para indicar si se encontró una coincidencia
 
         for user in listausuarios:
             if mail == user.correo:
                 contra = input("Ingrese la contraseña: ")
                 if contra == user.contra:
                     print("Inicio de sesión completado.")
-                    time.sleep(2)
+                    time.sleep(3)
                     bconsola()
                     menuPrincipalIn()
                     return 
                 else:
                     print("Contraseña incorrecta.")
-                    break  # Salir del bucle for cuando la contraseña sea incorrecta
+                    break 
             else:
                 intentos += 1
-                print(intentos)
-                encontrado = True
+                print("Este correo no es válido")
                 break
 
-        if not encontrado:
-            print("Este correo no es válido")
-        
-    print("Has alcanzado el límite de intentos.")
-    reg = input("Escribe 'Registrar' para ir al panel de Registro")
-    if reg == "Registrar":
-        registrar_usuario()
-    # nomas = input("Si deseas registrarte, escribe 'Registrarme': ")
-    # if nomas == "Registrarme":
-        # bconsola()
-        # registrar.registrar_usuario()
+            
 
+    print("\n===============Has alcanzado el límite de intentos.===============")
+    termino_intentos()
+
+
+def termino_intentos():
+    print("1.- Para ir al panel de Registro")
+    print("2.- Para volver a intentar")
+    reg = int(input("Seleccione una opción: "))
+    if reg == 1:
+        print("Te estamos redirigiendo al panel de registro")
+        time.sleep(3)
+        bconsola()
+        registrar_usuario()
+    elif reg == 2:
+        iniciar_sesion()
