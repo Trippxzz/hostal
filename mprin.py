@@ -1,6 +1,6 @@
 from logins.sesion import iniciar_sesion
 from logins.registrar import registrar_usuario
-
+from logins.recepcionistas import login_recepcionista
 def MenuPrincipal():
     print("=============== MENÚ PRINCIPAL HOSTALES ================")
     print("1.- Iniciar sesion usuario")
@@ -14,6 +14,10 @@ def MenuPrincipal():
         iniciar_sesion()
     elif seleccionar == 2:
         registrar_usuario()
+    # elif seleccionar == 3:
+    #     registrar_usuario()
+    elif seleccionar == 4:
+        login_recepcionista()
     
 
 MenuPrincipal()
