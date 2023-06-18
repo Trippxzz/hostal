@@ -36,3 +36,7 @@ def generar_id():
     caracteres = string.ascii_lowercase + string.digits
     id_random = ''.join(secrets.choice(caracteres) for _ in range(4))
     return "SUSER-" + id_random ##SUSER SIGNIFICA SOLO USER/USUARIO | ES DECIR, AUN NO HA REALIZADO NINGUNA COMPRA
+        
+        
+
+         
