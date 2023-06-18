@@ -16,9 +16,10 @@ def iniciar_sesion():
     print("=============== Inicia Sesión ================")
     while intentos < 3:
         mail = input("Ingrese su correo: ")
-
+        cval = False
         for user in listausuarios:
             if mail == user.correo:
+                cval = True
                 contra = input("Ingrese la contraseña: ")
                 if contra == user.contra:
                     print("Inicio de sesión completado.")
@@ -29,10 +30,11 @@ def iniciar_sesion():
                 else:
                     print("Contraseña incorrecta.")
                     break 
-            else:
-                intentos += 1
-                print("Este correo no es válido")
-                break
+  
+        intentos += 1
+        if not cval:
+            print("Este correo no es válido")
+                
 
             
 
