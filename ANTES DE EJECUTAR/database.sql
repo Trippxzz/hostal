@@ -128,7 +128,7 @@ INSERT INTO Recepcionista (RUT, Nombre, Apellido, Contrasena, HorarioLaboral, Su
 VALUES ('18765432-1', 'María', 'López', 'mlopez123' ,'9AM - 5PM', '2000', 'marialopez@gmail.com', '123456789', 'H001');
 
 INSERT INTO Recepcionista (RUT, Nombre, Apellido, Contrasena, HorarioLaboral, Sueldo, Gmail, Telefono, IdHostal)
-VALUES ('13751298-2', 'Ana', 'Torres', '8AM - 4PM', 'atorres123' ,'1800', 'anatorres@gmail.com', '987654321', 'H002');
+VALUES ('13751298-2', 'Ana', 'Torres',  'atorres123','8AM - 4PM' ,'1800', 'anatorres@gmail.com', '987654321', 'H002');
 
 INSERT INTO Recepcionista (RUT, Nombre, Apellido, Contrasena, HorarioLaboral, Sueldo, Gmail, Telefono, IdHostal)
 VALUES ('14650974-4', 'Luis', 'Silva', 'lsilva123', '10AM - 6PM', '2200', 'luissilva@gmail.com', '654321987', 'H003');
