@@ -1,37 +1,38 @@
 from principal.main import bconsola
 from principal.connector import Operaciones
-import time
+import time, string, secrets
+
 con = Operaciones
 listausuarios = []
 
-# REGISTRO USUARIO
-
 def registrar_usuario():
+    bconsola()
+    print("=============== Registrate ================")
     mail = input("Ingrese el correo que desea utilizar: ")
-    contra = input("Ingrese la contraseña: ")
-    contrac = input("Confirme la contraseña: ")
-    listausuarios = con.getInfoUsuario()
-    for user in listausuarios:
-        if mail != user.correo:
-            if contra == contrac:
-                print("Te has registrado correctamente, te moveremos al panel de Hostales")
-                con.crearUsuario("SOLOUSER",mail, contra)
-                time.sleep(2)
-                bconsola()
-                return 
-            else:
-                print("Contraseñas incorrectas")
-                registrar_usuario()
-                return  # Salir del bucle for cuando la contraseña sea incorrecta
+    listausuarios = con.getCorreoRegister(mail)
+    if not listausuarios:  
+        contra = input("Ingrese la contraseña: ")
+        contrac = input("Confirme la contraseña: ")
+        if contra == contrac:
+            print("Te has registrado correctamente, te moveremos al panel de Hostales")
+            con.crearUsuario(generar_id(), mail, contra)
+            time.sleep(3)
+            bconsola()
+            return
         else:
-             print("Este correo ya ha sido utilizado, porfavor intente con otro")
-             return
+            print("Las contraseñas no coinciden")
+            registrar_usuario()
+            return
+    else:
+        print("Este correo ya ha sido utilizado, por favor intente con otro")
+        time.sleep(2)
+        registrar_usuario()
+        return
             
         
 
 
-    
-        
-        
-
-         
+def generar_id():
+    caracteres = string.ascii_lowercase + string.digits
+    id_random = ''.join(secrets.choice(caracteres) for _ in range(4))
+    return "SUSER-" + id_random ##SUSER SIGNIFICA SOLO USER/USUARIO | ES DECIR, AUN NO HA REALIZADO NINGUNA COMPRA
