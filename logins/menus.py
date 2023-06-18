@@ -17,4 +17,4 @@ def menuHostales():
     print("5.- Hostal Arica")
     print("6.- Regresar al Menu Principal")
     print("==================================================")
-    seleccionar = int(input("Seleccione una opción: "))   
+    seleccionar = int(input("Seleccione una opción: "))  
