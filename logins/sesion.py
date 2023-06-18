@@ -7,7 +7,7 @@ con = Operaciones
 listausuarios = []
 
 
-# INICIO DE SESION
+# INICIO DE SESION USUARIO
 
 def iniciar_sesion():
     intentos = 0

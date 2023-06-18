@@ -4,6 +4,8 @@ import time
 con = Operaciones
 listausuarios = []
 
+# REGISTRO USUARIO
+
 def registrar_usuario():
     mail = input("Ingrese el correo que desea utilizar: ")
     contra = input("Ingrese la contraseña: ")
