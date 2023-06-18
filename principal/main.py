@@ -67,9 +67,11 @@ class Habitaciones:
         return self.disponibilidad
     
 class Recepcionista:
-    def __init__(self, rut, nombrec, horario, sueldo, mail, tel, idhostal):
+    def __init__(self, rut, nombre, apellido, contrasena, horario, sueldo, mail, tel, idhostal):
         self.rut = rut
-        self.nombrec = nombrec
+        self.nombre = nombre
+        self.apellido = apellido
+        self.contrasena = contrasena
         self.horario = horario
         self.sueldo = sueldo
         self.mail = mail
@@ -79,9 +81,15 @@ class Recepcionista:
     def getRut(self):
         return self.rut
         
-    def getNombrec(self):
-        return self.nombrec
+    def getNombre(self):
+        return self.nombre
     
+    def getContrasena(self):
+        return self.contrasena
+    
+    def getApellido(self):
+        return self.apellido
+
     def getHorario(self):
         return self.horario
     
