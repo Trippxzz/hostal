@@ -20,8 +20,8 @@ class Operaciones:
         cur = cone.cursor()
         cur.execute( "SELECT * FROM Recepcionista" )
         lista = []
-        for rut, nombre, correo, contra, fnac, dir, pais in cur:
-            op2 = Recepcionista(rut, nombre, correo,contra, fnac, dir, pais)
+        for rut, nombre, apellido, contrasena, horario, sueldo, mail, tel, idhostal in cur:
+            op2 = Recepcionista(rut, nombre, apellido, contrasena, horario, sueldo, mail, tel, idhostal)
             lista.append(op2)
         cur.close()
         cone.close()
