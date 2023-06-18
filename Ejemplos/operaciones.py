@@ -1,6 +1,6 @@
 import cx_Oracle
 
-from modelo import departamento
+from principal.modelo import departamento
 
 class operacion:
     

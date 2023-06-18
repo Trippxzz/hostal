@@ -1,5 +1,5 @@
 import operaciones
-import modelo
+import principal.modelo as modelo
 
 op=operaciones.operacion()
 

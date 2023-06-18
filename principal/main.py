@@ -1,12 +1,14 @@
+import os
 class Usuario:
-    def __init__(self,rut, nombrec, contrasena, fnac, dir, pais, reserva):
+    def __init__(self,rut, nombrec,correo, contra, fnac, dir, pais):
         self.rut = rut
         self.nombrec = nombrec
-        self.contrasena = contrasena
+        self.correo = correo
+        self.contra = contra
         self.fnac = fnac
         self.dir = dir
         self.pais = pais
-        self.reserva = reserva
+        # self.reserva = reserva
     
     def getRut(self):
         return self.rut
@@ -14,8 +16,8 @@ class Usuario:
     def getNombrec(self):
         return self.nombrec
     
-    def getContrasena(self):
-        return self.contrasena
+    def getContra(self):
+        return self.contra
     
     def getfNac(self):
         return self.fnac
@@ -97,3 +99,18 @@ class Recepcionista:
     
     
         
+
+
+
+
+
+
+
+
+### función para borrar consola
+def bconsola():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
