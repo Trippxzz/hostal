@@ -1,6 +1,8 @@
 from principal.main import bconsola
 from principal.connector import Operaciones
 import time
+# from mprin import MenuPrincipal
+from reservas.hacerreserva import menuHostales
 
 con = Operaciones
 listarecepcionistas = []
@@ -9,7 +11,7 @@ listarecepcionistas = []
             
     # Login de los recepcionistas 
     
-def login_recepcionista():
+def login_recepcionista(cis, n):
     intentos = 0
     listarecepcionistas = con.getInfoTrabajador()
     bconsola()
@@ -26,7 +28,9 @@ def login_recepcionista():
                     print("Te redirigiremos al panel de Trabajador")
                     time.sleep(3)
                     bconsola()
-                    # funcion menu trabajador
+                    cis = "Trabajador"
+                    n = correo
+                    menuRecepcionistas(cis, n)
                     return
                 else:
                      print("Contraseña incorrecta")
@@ -39,3 +43,18 @@ def login_recepcionista():
     time.sleep(2)
     login_recepcionista()            
     
+def menuRecepcionistas(cis, n):
+    print("========================= RECEPCIONISTAS ========================")
+    print("1.- Realizar reservas")
+    print("2.- Ver Reservas")
+    print("3.- Regresar al Menu Principal")
+    print("==================================================")
+    seleccionar = int(input("Seleccione una opción: "))
+
+    if seleccionar == 1:
+        menuHostales(cis, n)
+    # elif seleccionar == 2:
+    #     reservas()
+    # elif seleccionar == 3:
+    #     MenuPrincipal()
+
