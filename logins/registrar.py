@@ -1,11 +1,13 @@
 from principal.main import bconsola
 from principal.connector import Operaciones
+from reservas.hacerreserva import menuHostales
 import time, string, secrets
+
 
 con = Operaciones
 listausuarios = []
 
-def registrar_usuario():
+def registrar_usuario(cis, n):
     bconsola()
     print("=============== Registrate ================")
     mail = input("Ingrese el correo que desea utilizar: ")
@@ -14,10 +16,13 @@ def registrar_usuario():
         contra = input("Ingrese la contraseña: ")
         contrac = input("Confirme la contraseña: ")
         if contra == contrac:
+            cis = "Usuario"
             print("Te has registrado correctamente, te moveremos al panel de Hostales")
             con.crearUsuario(generar_id(), mail, contra)
             time.sleep(3)
             bconsola()
+            n = mail
+            menuHostales(cis, n)
             return
         else:
             print("Las contraseñas no coinciden")
@@ -30,8 +35,6 @@ def registrar_usuario():
         return
             
         
-
-
 def generar_id():
     caracteres = string.ascii_lowercase + string.digits
     id_random = ''.join(secrets.choice(caracteres) for _ in range(4))
