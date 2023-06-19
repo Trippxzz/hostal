@@ -43,8 +43,9 @@ CREATE TABLE Hostal (
 
 CREATE TABLE Habitacion (
 	IdHabitacion VARCHAR(30) PRIMARY KEY,
-	MaxHab VARCHAR(30),
-	Disponibilidad VARCHAR(30)
+	MaxHab INT(11),
+	Disponibilidad VARCHAR(30),
+	IdHostal VARCHAR(30)
 );
 
 CREATE TABLE Recepcionista (
@@ -79,6 +80,11 @@ ADD CONSTRAINT Recepcionista_IdHostal_FK
 FOREIGN KEY (IdHostal)
 REFERENCES Hostal (IdHostal);
 
+ALTER TABLE Habitacion
+ADD CONSTRAINT Habitacion_IdHostal_FK 
+FOREIGN KEY (IdHostal)
+REFERENCES Hostal (IdHostal);
+
 INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais)
 VALUES ('12345678-9', 'Juan Pérez', 'juanperez@gmail.com', 'hola123', '1990-01-01', 'Los Pastores 123', 'Chile');
 
@@ -109,20 +115,20 @@ VALUES ('H004', 'Hostal Arica', 'Avenida Peru 654', '10030');
 INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
 VALUES ('H005', 'Hostal Coquimbo', 'Avenida Herradura 312', '8020');
 
-INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad)
-VALUES ('H001', '2', 'Disponible');
+INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad, IdHostal)
+VALUES ('H001', 2, 'Disponible', 'H001');
 
-INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad)
-VALUES ('H002', '1', 'Disponible');
+INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad, IdHostal)
+VALUES ('H002', 1, 'Disponible', 'H002');
 
-INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad)
-VALUES ('H003', '2', 'Disponible');
+INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad, IdHostal)
+VALUES ('H003', 2, 'Disponible', 'H003');
 
-INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad)
-VALUES ('H004', '7', 'Disponible');
+INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad, IdHostal)
+VALUES ('H004', 7, 'Disponible', 'H004');
 
-INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad)
-VALUES ('H005', '0', 'Ocupada');
+INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad, IdHostal)
+VALUES ('H005', 0, 'Ocupada', 'H005');
 
 INSERT INTO Recepcionista (RUT, Nombre, Apellido, Contrasena, HorarioLaboral, Sueldo, Gmail, Telefono, IdHostal)
 VALUES ('18765432-1', 'María', 'López', 'mlopez123' ,'9AM - 5PM', '2000', 'marialopez@gmail.com', '123456789', 'H001');
@@ -138,18 +144,3 @@ VALUES ('20132439-6', 'Roberto', 'Fernández', 'rfernandez123', '11AM - 7PM', '2
 
 INSERT INTO Recepcionista (RUT, Nombre, Apellido, Contrasena, HorarioLaboral, Sueldo, Gmail, Telefono, IdHostal)
 VALUES ('21354678-8', 'Diego', 'Rojas', 'drojas123','9AM - 5PM', '2000', 'diegorojas@gmail.com', '123987456', 'H005');
-
-INSERT INTO Reserva (IdReserva, IdHostal, IdHabitacion, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida)
-VALUES ('R001', 'H001', 'H001', '12345678-9', '18765432-1', '2023-07-01', '2023-07-05');
-
-INSERT INTO Reserva (IdReserva, IdHostal, IdHabitacion, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida)
-VALUES ('R002', 'H002', 'H002', '19239102-1', '13751298-2', '2023-08-10', '2023-08-15');
-
-INSERT INTO Reserva (IdReserva, IdHostal, IdHabitacion, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida)
-VALUES ('R003', 'H003', 'H003', '21390129-3', '14650974-4', '2023-09-20', '2023-09-25');
-
-INSERT INTO Reserva (IdReserva, IdHostal, IdHabitacion, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida)
-VALUES ('R004', 'H004', 'H004', '16239087-5', '20132439-6', '2023-10-15', '2023-10-20');
-
-INSERT INTO Reserva (IdReserva, IdHostal, IdHabitacion, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida)
-VALUES ('R005', 'H005', 'H005', '19210295-7', '21354678-8', '2023-11-30', '2023-12-05');
