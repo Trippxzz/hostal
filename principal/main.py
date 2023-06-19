@@ -1,6 +1,6 @@
 import os
 class Usuario:
-    def __init__(self,rut, nombrec,correo, contra, fnac, dir, pais):
+    def __init__(self, rut, nombrec, correo, contra, fnac, dir, pais):
         self.rut = rut
         self.nombrec = nombrec
         self.correo = correo
@@ -52,10 +52,11 @@ class Hostal:
     
 
 class Habitaciones:
-    def __init__(self, idhabitacion, maxhab, dispoibilidad):
+    def __init__(self, idhabitacion, maxhab, disponibilidad, idhostal):
         self.idhabitacion = idhabitacion
         self.maxhab = maxhab
-        self.disponibilidad = dispoibilidad
+        self.disponibilidad = disponibilidad
+        self.idhostal = idhostal
         
     def getIdHab(self):
         return self.idhabitacion
@@ -65,6 +66,9 @@ class Habitaciones:
     
     def getDispo(self):
         return self.disponibilidad
+    
+    def getIdHostal(self):
+        return self.idhostal
     
 class Recepcionista:
     def __init__(self, rut, nombre, apellido, contrasena, horario, sueldo, mail, tel, idhostal):
@@ -106,12 +110,35 @@ class Recepcionista:
         return self.idhostal
     
     
+    class Reserva:
+        def __init__(self, IdReserva, IdHostal, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida):
+            self.IdReserva = IdReserva
+            self.IdHostal = IdHostal
+            self.IdHuesped = IdHuesped 
+            self.IdRecepcionista = IdRecepcionista
+            self.FechaLlegada = FechaLlegada
+            self.FechaSalida = FechaSalida
+
+        def getIdReserva(self):
+            return self.IdReserva
+            
+        def getIdReserva(self):
+            return self.IdReserva
         
+        def getIdHostal(self):
+            return self.IdHostal
 
+        def getIdHuesped(self):
+            return self.IdHuesped
 
+        def getIdRecepcionista(self):
+            return self.IdRecepcionista
 
+        def getFechaLlegada(self):
+            return self.FechaLlegada
 
-
+        def getFechaSalida(self):
+            return self.FechaSalida
 
 
 
