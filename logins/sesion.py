@@ -1,15 +1,17 @@
 from principal.main import bconsola
 from principal.connector import Operaciones
-from logins.menus import menuPrincipalIn
+from reservas.hacerreserva import menuHostales
 from logins.registrar import registrar_usuario
 import time
+
 con = Operaciones
 listausuarios = []
 
 
+correosesion = None
 # INICIO DE SESION
 
-def iniciar_sesion():
+def iniciar_sesion(cis, n):
     intentos = 0
     listausuarios = con.getInfoUsuario()
     bconsola()
@@ -22,10 +24,12 @@ def iniciar_sesion():
                 cval = True
                 contra = input("Ingrese la contraseña: ")
                 if contra == user.contra:
+                    cis = "Usuario"
+                    n = mail
                     print("Inicio de sesión completado.")
                     time.sleep(3)
                     bconsola()
-                    menuPrincipalIn()
+                    menuPrincipalIn(cis, n)
                     return 
                 else:
                     print("Contraseña incorrecta.")
@@ -42,6 +46,18 @@ def iniciar_sesion():
     termino_intentos()
 
 
+def menuPrincipalIn(cis, n):
+    print("==================== MENÚ PRINCIPAL HOSTALES  ====================")
+    print("========================= SESION INICIADA ========================")
+    print("1.- Ver hostales")
+    print("1.- Ver tus Datos")
+    print("2.- Salir")
+    print("========================================================")
+    seleccionar = int(input("Seleccione una opción: "))
+    if seleccionar == 1:
+        menuHostales(cis, n)
+
+
 def termino_intentos():
     print("1.- Para ir al panel de Registro")
     print("2.- Para volver a intentar")
@@ -53,3 +69,4 @@ def termino_intentos():
         registrar_usuario()
     elif reg == 2:
         iniciar_sesion()
+
