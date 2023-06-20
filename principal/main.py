@@ -1,6 +1,6 @@
 import os
 class Usuario:
-    def __init__(self, rut, nombrec, correo, contra, fnac, dir, pais):
+    def __init__(self, rut, nombrec, correo, contra, fnac, dir, pais, ntelefno):
         self.rut = rut
         self.nombrec = nombrec
         self.correo = correo
@@ -8,6 +8,7 @@ class Usuario:
         self.fnac = fnac
         self.dir = dir
         self.pais = pais
+        self.ntelefno = ntelefno
         # self.reserva = reserva
     
     def getRut(self):
@@ -30,7 +31,10 @@ class Usuario:
     
     def getReserva(self):
         return self.reserva
-# 
+    
+    def getNTelefono(self):
+        return self.ntelefno
+#   
 class Hostal:
     def __init__(self, idhostal, nombre, direccion, habitaciones ):
         self.idhostal = idhostal
