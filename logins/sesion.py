@@ -47,10 +47,8 @@ def iniciar_sesion(cis, n):
 
 
 def menuPrincipalIn(cis, n):
-    print("==================== MENÚ PRINCIPAL HOSTALES  ====================")
     print("========================= SESION INICIADA ========================")
     print("1.- Ver hostales")
-    print("1.- Ver tus Datos")
     print("2.- Salir")
     print("========================================================")
     seleccionar = int(input("Seleccione una opción: "))
