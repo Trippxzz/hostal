@@ -26,7 +26,6 @@ def MenuPrincipal():
     elif seleccionar == 5:
         exit()
     
-
 MenuPrincipal()
 
 
