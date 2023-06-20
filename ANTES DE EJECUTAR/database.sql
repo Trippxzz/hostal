@@ -101,16 +101,16 @@ VALUES ('16239087-5', 'Carolina Mendoza', 'carolinamendoza@gmail.com', 'caro123'
 INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais, NTelefono)
 VALUES ('19210295-7', 'Laura Gutiérrez', 'lauragutierrez@gmail.com', 'lauraguti10', '1994-03-10', 'Calle Bravo 210', 'Chile', '5');
 
-INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
+INSERT INTO Hostal (IdHostal, Nombre, Direccion)
 VALUES ('H001', 'Hostal Pedro de Valdivia', 'Avenida Alameda 456');
 
-INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
+INSERT INTO Hostal (IdHostal, Nombre, Direccion)
 VALUES ('H002', 'Hostal Iquique', 'Avenida del Mar 789');
 
-INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
+INSERT INTO Hostal (IdHostal, Nombre, Direccion)
 VALUES ('H003', 'Hostal Pto Montt', 'Avenida Montt 987');
 
-INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
+INSERT INTO Hostal (IdHostal, Nombre, Direccion)
 VALUES ('H004', 'Hostal Arica', 'Avenida Peru 654');
 
 INSERT INTO Hostal (IdHostal, Nombre, Direccion)
