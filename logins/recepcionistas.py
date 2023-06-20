@@ -1,9 +1,9 @@
 from principal.main import bconsola
 from principal.connector import Operaciones
 import time
-# from mprin import MenuPrincipal
+from reservas.verreservas import verReservas
 from reservas.hacerreserva import menuHostales
-
+# from principal.menui import MenuPrincipal
 con = Operaciones
 listarecepcionistas = []
 
@@ -53,8 +53,8 @@ def menuRecepcionistas(cis, n):
 
     if seleccionar == 1:
         menuHostales(cis, n)
-    # elif seleccionar == 2:
-    #     reservas()
+    elif seleccionar == 2:
+        verReservas()
     # elif seleccionar == 3:
     #     MenuPrincipal()
 
