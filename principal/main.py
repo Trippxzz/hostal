@@ -36,11 +36,11 @@ class Usuario:
         return self.ntelefno
 #   
 class Hostal:
-    def __init__(self, idhostal, nombre, direccion, habitaciones ):
+    def __init__(self, idhostal, nombre, direccion ):
         self.idhostal = idhostal
         self.nombre = nombre
         self.direccion = direccion
-        self.habitaciones = habitaciones
+        # self.habitaciones = habitaciones
         
     def getIdhostal(self):
         return self.idhostal
@@ -51,8 +51,8 @@ class Hostal:
     def getDireccion(self):
         return self.direccion
     
-    def getHabitaciones(self):
-        return self.habitaciones
+    # def getHabitaciones(self):
+    #     return self.habitaciones
     
 
 class Habitaciones:

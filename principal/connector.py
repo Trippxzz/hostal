@@ -118,8 +118,8 @@ class Operaciones:
         cur = cone.cursor()
         cur.execute( "SELECT * FROM Hostal" )
         lista = []
-        for idhostal, nombre, direccion, ingresos in cur:
-            op4 = Hostal(idhostal, nombre, direccion, ingresos)
+        for idhostal, nombre, direccion in cur:
+            op4 = Hostal(idhostal, nombre, direccion)
             lista.append(op4)
         cur.close()
         cone.close()
