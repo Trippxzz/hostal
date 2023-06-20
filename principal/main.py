@@ -114,35 +114,39 @@ class Recepcionista:
         return self.idhostal
     
     
-    class Reserva:
-        def __init__(self, IdReserva, IdHostal, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida):
-            self.IdReserva = IdReserva
-            self.IdHostal = IdHostal
-            self.IdHuesped = IdHuesped 
-            self.IdRecepcionista = IdRecepcionista
-            self.FechaLlegada = FechaLlegada
-            self.FechaSalida = FechaSalida
+class Reserva:
+    def __init__(self, IdReserva, IdHabitacion, IdHostal, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida):
+        self.IdReserva = IdReserva
+        self.IdHostal = IdHostal
+        self.IdHabitacion = IdHabitacion
+        self.IdHuesped = IdHuesped 
+        self.IdRecepcionista = IdRecepcionista
+        self.FechaLlegada = FechaLlegada
+        self.FechaSalida = FechaSalida
 
-        def getIdReserva(self):
-            return self.IdReserva
+    def getIdReserva(self):
+        return self.IdReserva
             
-        def getIdReserva(self):
-            return self.IdReserva
+    def getIdReserva(self):
+        return self.IdReserva
         
-        def getIdHostal(self):
-            return self.IdHostal
+    def getIdReserva(self):
+        return self.IdHabitacion
 
-        def getIdHuesped(self):
-            return self.IdHuesped
+    def getIdHostal(self):
+        return self.IdHostal
 
-        def getIdRecepcionista(self):
-            return self.IdRecepcionista
+    def getIdHuesped(self):
+        return self.IdHuesped
 
-        def getFechaLlegada(self):
-            return self.FechaLlegada
+    def getIdRecepcionista(self):
+        return self.IdRecepcionista
 
-        def getFechaSalida(self):
-            return self.FechaSalida
+    def getFechaLlegada(self):
+        return self.FechaLlegada
+
+    def getFechaSalida(self):
+        return self.FechaSalida
 
 
 
