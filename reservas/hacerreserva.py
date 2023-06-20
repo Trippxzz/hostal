@@ -2,6 +2,7 @@ import string, secrets, time
 from datetime import datetime
 from principal.connector import Operaciones
 from principal.main import bconsola
+# from principal.menui import MenuPrincipal
 
 op = Operaciones
 listahostales = []
@@ -48,8 +49,10 @@ def menuHostales(cis, n):
                 pdatosr(cis, n, canthab, hdispo, hn, nh, idh)
             elif reservar == 2:
                 menuHostales(cis, n)
-            # elif reservar == 3:
-                # en desarrollo
+            elif reservar == 3:
+                menuHostales(cis, n)
+    elif seleccionar == 6:
+        MenuPrincipal()
 
 
 def pdatosr(cis, n, canthab, hdispo, hn, nh, idh):
@@ -177,7 +180,6 @@ def pdatosp(cis, n, canthab, hdispo, hn, nh, idh, cantdias, fechallegada, fechas
                         print("En 30 segundos serás redirigido/a al menú principal")
                         time.sleep(30)
                         bconsola()
-                        # FUNCIÓN PARA VOLVER AL MENU PRINCIPAL
                     elif s == 2:
                         menuHostales(cis, n)                                             
             else:
@@ -220,9 +222,8 @@ def pdatosp(cis, n, canthab, hdispo, hn, nh, idh, cantdias, fechallegada, fechas
                         print("En 30 segundos serás redirigido/a al menú principal")
                         time.sleep(30)
                         bconsola()
-                         # FUNCIÓN PARA VOLVER AL MENU PRINCIPAL
-                    elif s == 2:
-                        menuHostales(cis, n)     
+                    # elif s == 2:
+                    #     menuHostales(cis, n)     
     else:
         ide = generar_id()
         rut = input("Ingrese el rut del cliente: ")
