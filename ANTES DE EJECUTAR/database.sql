@@ -21,12 +21,14 @@ CREATE TABLE Cliente (
 	Contrasena VARCHAR(30),
 	Nacimiento VARCHAR(30),
 	Direccion VARCHAR(30),
-	Pais VARCHAR(30)
+	Pais VARCHAR(30),
+	NTelefono VARCHAR(30)
 );
 
 CREATE TABLE Pago (
 	Ntransaccion VARCHAR(30) PRIMARY KEY,
 	Monto VARCHAR(30),
+	Metodo VARCHAR(30),
 	FechaDePago VARCHAR(30)
 );
 
@@ -37,8 +39,7 @@ CREATE TABLE Opiniones (
 CREATE TABLE Hostal (
 	IdHostal VARCHAR(30) PRIMARY KEY,
 	Nombre VARCHAR(30),
-	Direccion VARCHAR(30),
-	Ingresos VARCHAR(30)
+	Direccion VARCHAR(30)
 );
 
 CREATE TABLE Habitacion (
@@ -85,35 +86,35 @@ ADD CONSTRAINT Habitacion_IdHostal_FK
 FOREIGN KEY (IdHostal)
 REFERENCES Hostal (IdHostal);
 
-INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais)
-VALUES ('12345678-9', 'Juan Pérez', 'juanperez@gmail.com', 'hola123', '1990-01-01', 'Los Pastores 123', 'Chile');
+INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais, NTelefono)
+VALUES ('12345678-9', 'Juan Pérez', 'juanperez@gmail.com', 'hola123', '1990-01-01', 'Los Pastores 123', 'Chile', '1');
 
-INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais)
-VALUES ('19239102-1', 'Pedro Gómez', 'pedrogomez@gmail.com', '123hola', '1992-05-15', 'Calle Uruguay 822', 'Chile');
+INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais, NTelefono)
+VALUES ('19239102-1', 'Pedro Gómez', 'pedrogomez@gmail.com', '123hola', '1992-05-15', 'Calle Uruguay 822', 'Chile', '2');
 
-INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais)
-VALUES ('21390129-3', 'Marcela Rojas', 'marcelarojas@gmail.com', 'mrojas1988', '1988-11-30', 'Calle Sanchez 452', 'Chile');
+INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais, NTelefono)
+VALUES ('21390129-3', 'Marcela Rojas', 'marcelarojas@gmail.com', 'mrojas1988', '1988-11-30', 'Calle Sanchez 452', 'Chile', '3');
 
-INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais)
-VALUES ('16239087-5', 'Carolina Mendoza', 'carolinamendoza@gmail.com', 'caro123', '1995-07-20', 'Calle Vidal 721', 'Chile');
+INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais, NTelefono)
+VALUES ('16239087-5', 'Carolina Mendoza', 'carolinamendoza@gmail.com', 'caro123', '1995-07-20', 'Calle Vidal 721', 'Chile', '4');
 
-INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais)
-VALUES ('19210295-7', 'Laura Gutiérrez', 'lauragutierrez@gmail.com', 'lauraguti10', '1994-03-10', 'Calle Bravo 210', 'Chile');
-
-INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
-VALUES ('H001', 'Hostal Pedro de Valdivia', 'Avenida Alameda 456', '10000');
+INSERT INTO Cliente (RUT, Nombre, Correo, Contrasena, Nacimiento, Direccion, Pais, NTelefono)
+VALUES ('19210295-7', 'Laura Gutiérrez', 'lauragutierrez@gmail.com', 'lauraguti10', '1994-03-10', 'Calle Bravo 210', 'Chile', '5');
 
 INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
-VALUES ('H002', 'Hostal Iquique', 'Avenida del Mar 789', '15000');
+VALUES ('H001', 'Hostal Pedro de Valdivia', 'Avenida Alameda 456');
 
 INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
-VALUES ('H003', 'Hostal Pto Montt', 'Avenida Montt 987', '93102');
+VALUES ('H002', 'Hostal Iquique', 'Avenida del Mar 789');
 
 INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
-VALUES ('H004', 'Hostal Arica', 'Avenida Peru 654', '10030');
+VALUES ('H003', 'Hostal Pto Montt', 'Avenida Montt 987');
 
 INSERT INTO Hostal (IdHostal, Nombre, Direccion, Ingresos)
-VALUES ('H005', 'Hostal Coquimbo', 'Avenida Herradura 312', '8020');
+VALUES ('H004', 'Hostal Arica', 'Avenida Peru 654');
+
+INSERT INTO Hostal (IdHostal, Nombre, Direccion)
+VALUES ('H005', 'Hostal Coquimbo', 'Avenida Herradura 312');
 
 INSERT INTO Habitacion (IdHabitacion, MaxHab, Disponibilidad, IdHostal)
 VALUES ('H001', 2, 'Disponible', 'H001');
@@ -144,3 +145,6 @@ VALUES ('20132439-6', 'Roberto', 'Fernández', 'rfernandez123', '11AM - 7PM', '2
 
 INSERT INTO Recepcionista (RUT, Nombre, Apellido, Contrasena, HorarioLaboral, Sueldo, Gmail, Telefono, IdHostal)
 VALUES ('21354678-8', 'Diego', 'Rojas', 'drojas123','9AM - 5PM', '2000', 'diegorojas@gmail.com', '123987456', 'H005');
+
+INSERT INTO Recepcionista (RUT, Nombre, Apellido, Contrasena, HorarioLaboral, Sueldo, Gmail, Telefono, IdHostal)
+VALUES ('web', 'Reservas', 'web', 'sys','FULL TIME', '0', 'sys@gmail.com', '0', 'H004');
