@@ -1,5 +1,5 @@
 import pymysql
-from principal.main import Usuario, Recepcionista, Hostal, Habitaciones
+from principal.main import Usuario, Recepcionista, Hostal, Habitaciones, Reserva
 
 
 class Operaciones:
@@ -145,3 +145,27 @@ class Operaciones:
         cone.commit()
         cur.close()
         cone.close()
+    
+    def getReservas():
+        cone = pymysql.connect( host='localhost', user= 'root', passwd='', db='hostal' )
+        cur = cone.cursor()
+        cur.execute("SELECT * FROM Reserva ")
+        lista = []
+        for IdReserva, IdHostal, IdHabitacion, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida in cur:
+            op5 = Reserva(IdReserva, IdHostal, IdHabitacion, IdHuesped, IdRecepcionista, FechaLlegada, FechaSalida)
+            lista.append(op5)
+        cur.close()
+        cone.close()
+        return lista
+    
+    def getinfoHostalporID(id):
+        cone = pymysql.connect( host='localhost', user= 'root', passwd='', db='hostal' )
+        cur = cone.cursor()
+        cur.execute("""SELECT * FROM Hostal WHERE IdHostal = %s """,(id,))
+        lista = []
+        for idhostal, nombre, direccion, ingresos in cur:
+            op5 = Hostal(idhostal, nombre, direccion, ingresos)
+            lista.append(op5)
+        cur.close()
+        cone.close()
+        return lista
