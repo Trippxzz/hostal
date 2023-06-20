@@ -54,6 +54,8 @@ def menuPrincipalIn(cis, n):
     seleccionar = int(input("Seleccione una opción: "))
     if seleccionar == 1:
         menuHostales(cis, n)
+    # elif seleccionar == 2:
+    #     MenuPrincipal()
 
 
 def termino_intentos():

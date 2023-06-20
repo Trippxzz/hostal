@@ -3,7 +3,6 @@ from principal.connector import Operaciones
 import time
 from reservas.verreservas import verReservas
 from reservas.hacerreserva import menuHostales
-# from principal.menui import MenuPrincipal
 con = Operaciones
 listarecepcionistas = []
 

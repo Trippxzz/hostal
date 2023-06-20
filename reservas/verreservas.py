@@ -1,6 +1,5 @@
 from principal.connector import Operaciones 
 from principal.main import bconsola
-# from principal.menui import MenuPrincipal
 op = Operaciones
 listareservas = []
 listainfohos = []
@@ -26,5 +25,5 @@ def verReservas():
             print("Fecha de Llegada: ", r.FechaLlegada)
             print("Fecha de Regreso: ", r.FechaSalida)
     # elif s == 101:
-    
+
     #     MenuPrincipal()

@@ -2,7 +2,6 @@ import string, secrets, time
 from datetime import datetime
 from principal.connector import Operaciones
 from principal.main import bconsola
-# from principal.menui import MenuPrincipal
 
 op = Operaciones
 listahostales = []
