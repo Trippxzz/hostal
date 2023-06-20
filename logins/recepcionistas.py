@@ -28,7 +28,7 @@ def login_recepcionista(cis, n):
                     print("Te redirigiremos al panel de Trabajador")
                     time.sleep(3)
                     bconsola()
-                    cis = "Trabajador"
+                    cis = "Recepcionista"
                     n = correo
                     menuRecepcionistas(cis, n)
                     return
